@@ -7,11 +7,10 @@ import org.springframework.stereotype.Component;
 /**
  * Created by chethana.nk on 29/3/18.
  */
+
 @Component
 public class ProductDaoImpl implements ProductDao{
 
-    @Autowired
-    private ProductDao productDao;
 
     @Override
     public Product getProductById(int prodcutId) {

@@ -23,11 +23,18 @@ repositories {
 	mavenCentral()
 }
 
+dependencyManagement {
+	imports {
+		mavenBom 'org.springframework.cloud:spring-cloud-netflix:1.0.7.RELEASE'
+		mavenBom 'io.spring.platform:platform-bom:2.0.3.RELEASE'
+	}
+}
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.cloud:spring-cloud-netflix:1.0.7.RELEASE')
 	compile 'org.springframework.cloud:spring-cloud-starter-eureka'
 	compile 'org.springframework.cloud:spring-cloud-starter-eureka-client'
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile 'org.springframework.data:spring-data-mongodb:1.10.6.RELEASE'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.9.RELEASE'
 }
