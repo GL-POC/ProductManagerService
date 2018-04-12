@@ -1,20 +1,33 @@
 package com.gl.entity;
 
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * Created by chethana.nk on 29/3/18.
  */
 
+@Document(collection = "products")
 public class Product {
 
-    private int productId;
+    @Id
+    private String productId;
     private String productName;
     private String locationID;
 
-    public int getProductId() {
+    public Product() {}
+
+    public Product(String productName, String locationID) {
+        this.productName = productName;
+        this.locationID = locationID;
+    }
+
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 

@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.9.RELEASE'
+		springBootVersion = '2.0.0.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -32,9 +32,11 @@ dependencyManagement {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile 'org.springframework.cloud:spring-cloud-starter-eureka'
-	compile 'org.springframework.cloud:spring-cloud-starter-eureka-client'
-	compile 'org.springframework.data:spring-data-mongodb:1.10.6.RELEASE'
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.9.RELEASE'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka-client'
+    compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    compile('org.springframework.boot:spring-boot-starter-data-rest')
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-config'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.0.0.RELEASE'
 }
