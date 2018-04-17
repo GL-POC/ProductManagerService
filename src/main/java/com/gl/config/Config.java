@@ -47,7 +47,7 @@ public class Config {
     public @Bean
     MongoDbFactory mongoDbFactory() throws Exception {
 
-        return new SimpleMongoDbFactory(new MongoClient(getHost(), Integer.parseInt(getPort())), getDb());
+        return new SimpleMongoDbFactory(new MongoClient("localhost", 27017), "pmsDb");
     }
 
     public @Bean

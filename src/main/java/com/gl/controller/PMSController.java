@@ -15,9 +15,9 @@ public class PMSController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
-    public Product getProductById(@PathVariable String id){
-        Product product = productService.getProductById(id);
+    @RequestMapping(value = "/product/{productId}", method = RequestMethod.GET)
+    public Product getProductById(@PathVariable String productId){
+        Product product = productService.getProductById(productId);
         return product;
 
     }
