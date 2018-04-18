@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Product {
 
     @Id
-    private String productId;
+    private String id;
     private String productName;
     private String locationID;
 
@@ -23,12 +23,12 @@ public class Product {
         this.locationID = locationID;
     }
 
-    public String getProductId() {
-        return productId;
+    public String getId() {
+        return id;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getProductName() {
@@ -50,7 +50,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-            "productId=" + productId +
+            "id=" + id +
             ", productName='" + productName + '\'' +
             ", locationID='" + locationID + '\'' +
             '}';
