@@ -30,7 +30,11 @@ public class ProductService {
         productRepository.delete(productId);
     }
 
-   /* public Product updateProduct(String productId){
-        productRepository.s
-    }*/
+    public Product updateProduct(String productId, Product product){
+       Product productById= productRepository.getProductById(productId);
+       productById.setProductName(product.getProductName());
+       productById.setLocationID(product.getLocationID());
+
+       return productRepository.save(productById);
+    }
 }

@@ -34,8 +34,9 @@ public class PMSController {
     }
 
 
-    /*@PutMapping(value = "/update/{productId}")
-    public Product updateProduct(@PathVariable String productId){
+    @PutMapping(value = "/update/{productId}")
+    public Product updateProductName(@PathVariable String productId, @RequestBody Product product){
 
-    }*/
+        return productService.updateProduct(productId, product);
+    }
 }
