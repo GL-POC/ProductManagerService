@@ -2,6 +2,7 @@ package com.gl.config;
 
 
 import com.mongodb.MongoClient;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -35,11 +36,13 @@ import java.io.IOException;
 @EnableSwagger2
 public class Config {
 
-
+    @Value("${spring.data.mongodb.database:productsDb}")
     private String db;
 
+    @Value("${spring.data.mongodb.host:127.0.0.1}")
     private String host;
 
+    @Value("${spring.data.mongodb.port:9999}")
     private String port;
 
     public String getDb() {
@@ -57,7 +60,7 @@ public class Config {
     public @Bean
     MongoDbFactory mongoDbFactory() throws Exception {
 
-        return new SimpleMongoDbFactory(new MongoClient("localhost", 27017), "pmsDb");
+        return new SimpleMongoDbFactory(new MongoClient(getHost(), Integer.parseInt(getPort())), getDb());
     }
 
     public @Bean
